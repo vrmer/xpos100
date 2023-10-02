@@ -164,6 +164,9 @@ def get_compute_metrics_fn(task_type: str, id2label: Optional[Dict[int, str]]):
 
         return compute_question_answering_metrics
 
+    if task_type == "dependency-parsing":
+        pass  # TODO: implement evaluation
+
 
 def _prepare_training(instance: BenchmarkInstance):
     print_stage("Prepare data")
@@ -500,6 +503,8 @@ def train_language_modeling(instance: BenchmarkInstance, training_args: Training
 
 def main():
     args, training_argv = parse_arguments()
+
+    breakpoint()
 
     # Retrieve training instance
     benchmark = XlingBenchmark.from_yaml(args.config)

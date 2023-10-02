@@ -27,6 +27,7 @@ TASK_TYPES = [
     "question-answering",
     "sentence-similarity",
     "sentence-retrieval",
+    "dependency-parsing"
 ]
 
 
@@ -554,6 +555,7 @@ class BenchmarkInstance:
             "question-answering": AutoModelForQuestionAnswering,
             "sentence-similarity": AutoModelForSequenceClassification,
             "sentence-retrieval": AutoModel,
+            # "dependency-parsing": # TODO: add dependency parsing model
         }
         model_id = self.model_path_
         not verbose or print("loading model:", model_id)
